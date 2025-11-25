@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PurnVasu Tech Solutions — Royal Dark Brochure</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root{
+      --royal-bg-1: #020b1a;
+      --royal-bg-2: #03132c;
+      --royal-bg-3: #051c40;
+      --gold: #d4af37;
+      --gold-light: #f5e29f;
+      --white-shine: #f8fafc;
+      --glass: rgba(255,255,255,0.06);
+    }
+    body{
+      font-family:'Inter',system-ui;
+      background: radial-gradient(circle at top, var(--royal-bg-3), var(--royal-bg-1) 80%);
+      color: var(--white-shine);
+    }
+    .gold{color:var(--gold);}    
+    .glass-box{
+      background:var(--glass);
+      border:1px solid rgba(255,255,255,0.08);
+      backdrop-filter:blur(12px);
+      box-shadow:0 0 35px rgba(0,0,0,0.45);
+    }
+    .glow-border{
+      border:1px solid rgba(212,175,55,0.35);
+      box-shadow:0 0 18px rgba(212,175,55,0.25);
+    }
+    .section-title{
+      font-size:clamp(1.5rem, 5vw, 2.2rem);
+      font-weight:800;
+      color:var(--gold);
+      text-shadow:0 0 15px rgba(212,175,55,0.55);
+    }
+    .hero-layout{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:3rem;
+      align-items:center;
+    }
+    @media (min-width: 1024px) {
+      .hero-layout{
+        grid-template-columns:1.1fr 0.9fr;
+      }
+    }
+  </style>
+</head>
+
+<body class="antialiased">
+
+  <!-- HERO / COVER -->
+  <section class="min-h-screen flex items-center px-4 sm:px-6 md:px-8 lg:px-10 py-10 sm:py-14 md:py-20">
+    <div class="max-w-7xl mx-auto w-full hero-layout">
+
+      <!-- LEFT TEXT SIDE -->
+      <div>
+        <div class="flex items-center gap-2 sm:gap-3 md:gap-4 mb-4 sm:mb-6">
+          <div class="w-18 h-18 sm:w-24 md:w-28 md:h-28 rounded-xl bg-transparent flex items-center justify-center flex-shrink-0">
+            <!-- LOGO -->
+            <img src="./PurnVasu-logo.png" alt="PurnVasu Logo" class="w-16 h-16 sm:w-20 h-20 md:w-25 md:h-25 object-contain">
+          </div>
+
+          <div>
+            <h1 class="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold gold whitespace-nowrap">PurnVasu Tech Solutions</h1>
+            <p class="text-xs sm:text-xs md:text-sm text-gray-300 tracking-wide">Private Limited</p>
+          </div>
+        </div>
+
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold leading-snug gold-light">Engineering Royal-Grade Digital Solutions</h2>
+
+        <p class="mt-3 sm:mt-4 text-gray-300 max-w-xl text-sm sm:text-base md:text-lg">
+          AI • Cloud • Security • Full-Stack — delivered with precision, discipline, and a premium engineering experience.
+        </p>
+
+        <div class="mt-6 sm:mt-8 flex flex-wrap gap-3 sm:gap-4 md:gap-6">
+          <a href="#contact" class="px-4 sm:px-5 md:px-6 py-2 sm:py-3 text-sm sm:text-base rounded-xl bg-[rgba(255,255,255,0.12)] gold font-semibold glow-border hover:scale-105 transition">Connect</a>
+          <a href="#services" class="px-4 sm:px-5 md:px-6 py-2 sm:py-3 text-sm sm:text-base rounded-xl border border-gray-600 text-gray-200 hover:text-white hover:border-gold transition">Services</a>
+        </div>
+      </div>
+
+      <!-- RIGHT DECORATIVE CARD SIDE -->
+      <div class="glass-box rounded-2xl p-6 sm:p-8 md:p-10 glow-border">
+        <h3 class="text-lg sm:text-xl md:text-xl font-semibold gold">Snapshot</h3>
+        <p class="text-gray-300 mt-2 sm:mt-3 text-sm sm:text-base">We deliver enterprise-grade secure engineering solutions with AI at core.</p>
+
+        <div class="grid grid-cols-2 gap-3 sm:gap-4 mt-4 sm:mt-6">
+          <div class="glass-box rounded-xl p-3 sm:p-4 md:p-5 text-center">
+            <div class="text-gray-400 text-xs sm:text-sm">Projects</div>
+            <div class="text-xl sm:text-2xl md:text-3xl font-bold gold">46</div>
+          </div>
+          <div class="glass-box rounded-xl p-3 sm:p-4 md:p-5 text-center">
+            <div class="text-gray-400 text-xs sm:text-sm">Clients</div>
+            <div class="text-xl sm:text-2xl md:text-3xl font-bold gold">28</div>
+          </div>
+          <div class="glass-box rounded-xl p-3 sm:p-4 md:p-5 text-center">
+            <div class="text-gray-400 text-xs sm:text-sm">Active Projects</div>
+            <div class="text-xl sm:text-2xl md:text-3xl font-bold gold">7</div>
+          </div>
+          <div class="glass-box rounded-xl p-3 sm:p-4 md:p-5 text-center">
+            <div class="text-gray-400 text-xs sm:text-sm">Active Clients</div>
+            <div class="text-xl sm:text-2xl md:text-3xl font-bold gold">4</div>
+          </div>
+        </div>
+
+        <div class="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-gray-700">
+          <p class="text-sm sm:text-base gold mb-2 font-semibold">Leadership</p>
+          <div class="text-gray-300 text-sm sm:text-base">Managing Director: A. Poornima Acharya</div>
+          <div class="text-gray-300 text-sm sm:text-base mt-2">Director: B. N. Chandrika</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SERVICES -->
+  <section id="services" class="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8">
+    <div class="max-w-6xl mx-auto">
+
+      <h3 class="section-title mb-6 sm:mb-8 md:mb-10 text-center">Our Core Royal Services</h3>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+
+        <div class="glass-box rounded-xl p-5 sm:p-6 md:p-8 glow-border">
+          <h4 class="font-bold text-lg sm:text-xl gold">AI & Automation</h4>
+          <p class="text-gray-300 mt-2 sm:mt-3 text-sm sm:text-base">AI agents, LLM integrations, secure pipelines, automation systems.</p>
+        </div>
+
+        <div class="glass-box rounded-xl p-5 sm:p-6 md:p-8 glow-border">
+          <h4 class="font-bold text-lg sm:text-xl gold">Web & Mobile</h4>
+          <p class="text-gray-300 mt-2 sm:mt-3 text-sm sm:text-base">React, TypeScript, Flutter, Swift & full-stack premium development.</p>
+        </div>
+
+        <div class="glass-box rounded-xl p-5 sm:p-6 md:p-8 glow-border">
+          <h4 class="font-bold text-lg sm:text-xl gold">Cloud & Data</h4>
+          <p class="text-gray-300 mt-2 sm:mt-3 text-sm sm:text-base">AWS, Azure, pipelines, BI dashboards, analytics-driven architectures.</p>
+        </div>
+
+        <div class="glass-box rounded-xl p-5 sm:p-6 md:p-8 glow-border">
+          <h4 class="font-bold text-lg sm:text-xl gold">Cybersecurity</h4>
+          <p class="text-gray-300 mt-2 sm:mt-3 text-sm sm:text-base">Secure APIs, auth systems, breach prevention & encryption layers.</p>
+        </div>
+
+        <div class="glass-box rounded-xl p-5 sm:p-6 md:p-8 glow-border">
+          <h4 class="font-bold text-lg sm:text-xl gold">Analytics & Growth</h4>
+          <p class="text-gray-300 mt-2 sm:mt-3 text-sm sm:text-base">Power BI dashboards, behaviour analysis, SEO + SEM optimization.</p>
+        </div>
+
+        <div class="glass-box rounded-xl p-5 sm:p-6 md:p-8 glow-border">
+          <h4 class="font-bold text-lg sm:text-xl gold">Performance</h4>
+          <p class="text-gray-300 mt-2 sm:mt-3 text-sm sm:text-base">Project optimization, scaling & architecture improvements.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 lg:px-10">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 items-start">
+
+      <div class="glass-box rounded-2xl p-6 sm:p-8 md:p-10 glow-border">
+        <h3 class="section-title text-left">Contact Us</h3>
+        <p class="text-gray-300 mt-3 sm:mt-4 text-sm sm:text-base">Let's build something extraordinary.</p>
+
+        <div class="mt-4 sm:mt-6">
+          <p class="text-gray-400 text-xs sm:text-sm">Phone</p>
+          <p class="gold font-semibold text-base sm:text-lg">+91 7032933445</p>
+        </div>
+
+        <div class="mt-3 sm:mt-4">
+          <p class="text-gray-400 text-xs sm:text-sm">Email</p>
+          <p class="gold font-semibold text-base sm:text-lg">purnvasu.vap@gmail.com</p>
+        </div>
+
+        <a href="mailto:purnvasu.vap@gmail.com" class="mt-6 sm:mt-8 inline-block px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base rounded-xl bg-[rgba(255,255,255,0.12)] gold font-semibold glow-border hover:scale-105 transition">Send Email</a>
+      </div>
+
+      <div class="glass-box rounded-2xl p-6 sm:p-8 md:p-10 glow-border text-gray-300">
+        <h4 class="gold font-bold text-lg sm:text-lg">Business Summary</h4>
+        <div class="grid grid-cols-2 gap-4 sm:gap-5 md:gap-6 mt-4 sm:mt-6">
+          <div class="glass-box rounded-xl p-4 sm:p-5 md:p-6 text-center"><div class="text-xs sm:text-sm text-gray-400">Projects</div><div class="text-xl sm:text-2xl gold font-bold">46</div></div>
+          <div class="glass-box rounded-xl p-4 sm:p-5 md:p-6 text-center"><div class="text-xs sm:text-sm text-gray-400">Clients</div><div class="text-xl sm:text-2xl gold font-bold">28</div></div>
