@@ -50,6 +50,60 @@
         grid-template-columns:1.1fr 0.9fr;
       }
     }
+    .service-dropdown-btn {
+      width: 100%;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .service-dropdown-btn:hover {
+      opacity: 0.8;
+    }
+    .service-dropdown-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .service-dropdown-content.active {
+      max-height: 2000px;
+    }
+    .service-dropdown-content.active .project-item:first-child {
+      margin-top: 0.5rem;
+    }
+    .project-item {
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      border-left: 3px solid var(--gold);
+      transition: all 0.2s ease;
+      margin-bottom: 0.5rem;
+      border-radius: 0.375rem;
+    }
+    .project-item:hover {
+      background: rgba(212, 175, 55, 0.08);
+      padding-left: 1.25rem;
+    }
+    .project-color-1 {
+      background: rgba(100, 200, 255, 0.08);
+      color: #64c8ff;
+    }
+    .project-color-2 {
+      background: rgba(212, 175, 55, 0.08);
+      color: #f5e29f;
+    }
+    .service-card {
+      transition: grid-column 0.3s ease;
+    }
+    .service-card.expanded {
+      grid-column: 1 / -1;
+    }
+    @media (max-width: 1023px) {
+      .service-card.expanded {
+        grid-column: auto;
+      }
+    }
   </style>
 </head>
 
@@ -128,39 +182,166 @@
       
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
 
-        <div class="glass-box rounded-xl p-5 sm:p-6 md:p-8 glow-border">
-          <h4 class="font-bold text-lg sm:text-xl gold">AI & Automation</h4>
-          <p class="text-gray-300 mt-2 sm:mt-3 text-sm sm:text-base">AI agents, LLM integrations, secure pipelines, automation systems.</p>
+        <!-- AI & Automation -->
+        <div class="service-card glass-box rounded-xl p-5 sm:p-6 md:p-8 glow-border">
+          <button class="service-dropdown-btn w-full text-left p-0" onclick="toggleDropdown(this)">
+            <div class="flex justify-between items-center w-full">
+              <h4 class="font-bold text-lg sm:text-xl gold">AI & Automation</h4>
+              <span class="text-gold text-xl transition-transform">▼</span>
+            </div>
+          </button>
+          <p class="text-gray-300 mt-2 sm:mt-3 text-sm sm:text-base">13 Projects</p>
+          <div class="service-dropdown-content mt-4">
+            <div class="project-item project-color-1">Intelligent Ad-Control Automation Agent</div>
+            <div class="project-item project-color-2">Personal AI Assistant for Daily Operations</div>
+            <div class="project-item project-color-1">Image Generation & Editing AI Suite</div>
+            <div class="project-item project-color-2">AI-Based Video Generation Engine</div>
+            <div class="project-item project-color-1">Smart Recommendation System Using LLMs</div>
+            <div class="project-item project-color-2">Conversational AI Chatbot for Customer Support</div>
+            <div class="project-item project-color-1">Medical OP Registration AI Automation System</div>
+            <div class="project-item project-color-2">Healthcare Consultation Chatbot with Symptom Mapping</div>
+            <div class="project-item project-color-1">Predictive Analytics Model for User Behaviour</div>
+            <div class="project-item project-color-2">AI-driven Content Generation & Copywriting Tool</div>
+            <div class="project-item project-color-1">Visual Defect Detection Model for Rusted Components</div>
+            <div class="project-item project-color-2">Learning Platform with Integrated LLM Assistant</div>
+            <div class="project-item project-color-1">AI-Enabled Order Demand Prediction Engine</div>
+          </div>
         </div>
 
-        <div class="glass-box rounded-xl p-5 sm:p-6 md:p-8 glow-border">
-          <h4 class="font-bold text-lg sm:text-xl gold">Web & Mobile</h4>
-          <p class="text-gray-300 mt-2 sm:mt-3 text-sm sm:text-base">React, TypeScript, Flutter, Swift & full-stack premium development.</p>
+        <!-- Web & Mobile Applications -->
+        <div class="service-card glass-box rounded-xl p-5 sm:p-6 md:p-8 glow-border">
+          <button class="service-dropdown-btn w-full text-left p-0" onclick="toggleDropdown(this)">
+            <div class="flex justify-between items-center w-full">
+              <h4 class="font-bold text-lg sm:text-xl gold">Web & Mobile</h4>
+              <span class="text-gold text-xl transition-transform">▼</span>
+            </div>
+          </button>
+          <p class="text-gray-300 mt-2 sm:mt-3 text-sm sm:text-base">12–14 Projects</p>
+          <div class="service-dropdown-content mt-4">
+            <div class="project-item project-color-1">ERP & CRM Platform for Enterprise Operations</div>
+            <div class="project-item project-color-2">Banking Management Web Portal</div>
+            <div class="project-item project-color-1">School Management & Attendance Tracking App</div>
+            <div class="project-item project-color-2">Company Internal Workforce Management System</div>
+            <div class="project-item project-color-1">Restaurant Order & Billing Mobile App</div>
+            <div class="project-item project-color-2">Restaurant Inventory & Kitchen Control Platform</div>
+            <div class="project-item project-color-1">E-Learning & Assessment Web Platform</div>
+            <div class="project-item project-color-2">AI-Integrated Learning Hub for Students</div>
+            <div class="project-item project-color-1">Multi-Restaurant Order Aggregation System</div>
+            <div class="project-item project-color-2">Promotional Branding & Marketing Website</div>
+            <div class="project-item project-color-1">Customer Relationship & Feedback Management Portal</div>
+            <div class="project-item project-color-2">Mobile App for Service Appointment Scheduling</div>
+            <div class="project-item project-color-1">Online Advertising & Campaign Management Website</div>
+          </div>
         </div>
 
-        <div class="glass-box rounded-xl p-5 sm:p-6 md:p-8 glow-border">
-          <h4 class="font-bold text-lg sm:text-xl gold">Cloud & Data</h4>
-          <p class="text-gray-300 mt-2 sm:mt-3 text-sm sm:text-base">AWS, Azure, pipelines, BI dashboards, analytics-driven architectures.</p>
+        <!-- Cloud & Data Handling -->
+        <div class="service-card glass-box rounded-xl p-5 sm:p-6 md:p-8 glow-border">
+          <button class="service-dropdown-btn w-full text-left p-0" onclick="toggleDropdown(this)">
+            <div class="flex justify-between items-center w-full">
+              <h4 class="font-bold text-lg sm:text-xl gold">Cloud & Data</h4>
+              <span class="text-gold text-xl transition-transform">▼</span>
+            </div>
+          </button>
+          <p class="text-gray-300 mt-2 sm:mt-3 text-sm sm:text-base">2 Projects</p>
+          <div class="service-dropdown-content mt-4">
+            <div class="project-item project-color-1">Cloud-Based Data Sync & Processing Engine</div>
+            <div class="project-item project-color-2">High-Volume Secure Cloud Storage & Retrieval System</div>
+          </div>
         </div>
 
-        <div class="glass-box rounded-xl p-5 sm:p-6 md:p-8 glow-border">
-          <h4 class="font-bold text-lg sm:text-xl gold">Cybersecurity</h4>
-          <p class="text-gray-300 mt-2 sm:mt-3 text-sm sm:text-base">Secure APIs, auth systems, breach prevention & encryption layers.</p>
+        <!-- Cybersecurity -->
+        <div class="service-card glass-box rounded-xl p-5 sm:p-6 md:p-8 glow-border">
+          <button class="service-dropdown-btn w-full text-left p-0" onclick="toggleDropdown(this)">
+            <div class="flex justify-between items-center w-full">
+              <h4 class="font-bold text-lg sm:text-xl gold">Cybersecurity</h4>
+              <span class="text-gold text-xl transition-transform">▼</span>
+            </div>
+          </button>
+          <p class="text-gray-300 mt-2 sm:mt-3 text-sm sm:text-base">7 Projects</p>
+          <div class="service-dropdown-content mt-4">
+            <div class="project-item project-color-1">Authentication Hardening for Legacy Applications</div>
+            <div class="project-item project-color-2">Secure File Encryption & Protection Framework</div>
+            <div class="project-item project-color-1">Multi-Layer Security Overlay for Web Portals</div>
+            <div class="project-item project-color-2">Cybersecure Access Control & Tokenization Module</div>
+            <div class="project-item project-color-1">Security Server Setup with Encrypted Routing</div>
+            <div class="project-item project-color-2">Vulnerability Patch & Fix Integration for Legacy Code</div>
+            <div class="project-item project-color-1">Secure Folder & Repository Management Architecture</div>
+          </div>
         </div>
 
-        <div class="glass-box rounded-xl p-5 sm:p-6 md:p-8 glow-border">
-          <h4 class="font-bold text-lg sm:text-xl gold">Analytics & Growth</h4>
-          <p class="text-gray-300 mt-2 sm:mt-3 text-sm sm:text-base">Power BI dashboards, behaviour analysis, SEO + SEM optimization.</p>
+        <!-- Analytics & Growth -->
+        <div class="service-card glass-box rounded-xl p-5 sm:p-6 md:p-8 glow-border">
+          <button class="service-dropdown-btn w-full text-left p-0" onclick="toggleDropdown(this)">
+            <div class="flex justify-between items-center w-full">
+              <h4 class="font-bold text-lg sm:text-xl gold">Analytics & Growth</h4>
+              <span class="text-gold text-xl transition-transform">▼</span>
+            </div>
+          </button>
+          <p class="text-gray-300 mt-2 sm:mt-3 text-sm sm:text-base">4 Projects</p>
+          <div class="service-dropdown-content mt-4">
+            <div class="project-item project-color-1">Power BI Dashboard for Material & Resource Management</div>
+            <div class="project-item project-color-2">Machine Condition & Rust Detection Analytics Chart</div>
+            <div class="project-item project-color-1">SEO-Optimized Website Growth Tracking Dashboard</div>
+            <div class="project-item project-color-2">Power BI Insights for Production & Operations Flow</div>
+          </div>
         </div>
 
-        <div class="glass-box rounded-xl p-5 sm:p-6 md:p-8 glow-border">
-          <h4 class="font-bold text-lg sm:text-xl gold">Performance</h4>
-          <p class="text-gray-300 mt-2 sm:mt-3 text-sm sm:text-base">Project optimization, scaling & architecture improvements.</p>
+        <!-- Performance & Enhancement -->
+        <div class="service-card glass-box rounded-xl p-5 sm:p-6 md:p-8 glow-border">
+          <button class="service-dropdown-btn w-full text-left p-0" onclick="toggleDropdown(this)">
+            <div class="flex justify-between items-center w-full">
+              <h4 class="font-bold text-lg sm:text-xl gold">Performance</h4>
+              <span class="text-gold text-xl transition-transform">▼</span>
+            </div>
+          </button>
+          <p class="text-gray-300 mt-2 sm:mt-3 text-sm sm:text-base">7 Projects</p>
+          <div class="service-dropdown-content mt-4">
+            <div class="project-item project-color-1">Legacy Code Optimization & Modernization Project</div>
+            <div class="project-item project-color-2">UI/UX Enhancement & Workflow Re-Structuring</div>
+            <div class="project-item project-color-1">Feature Extension & API Integration Upgrade</div>
+            <div class="project-item project-color-2">Performance Boosting for High-Load Applications</div>
+            <div class="project-item project-color-1">Bug Fixing & Continuous Maintenance Enhancement</div>
+            <div class="project-item project-color-2">Custom Feature Personalization for Client Product</div>
+            <div class="project-item project-color-1">Code Refactoring & Architecture Improvement Project</div>
+          </div>
         </div>
 
       </div>
     </div>
   </section>
+
+  <script>
+    function toggleDropdown(button) {
+      // Find the parent card container
+      const card = button.closest('.service-card');
+      const content = card.querySelector('.service-dropdown-content');
+      const isActive = content.classList.contains('active');
+      
+      // Close all other dropdowns
+      document.querySelectorAll('.service-dropdown-content.active').forEach(el => {
+        if (el !== content) {
+          el.classList.remove('active');
+          const cardEl = el.closest('.service-card');
+          cardEl.classList.remove('expanded');
+          const btn = cardEl.querySelector('.service-dropdown-btn');
+          const span = btn.querySelector('span');
+          span.style.transform = 'rotate(0deg)';
+        }
+      });
+      
+      // Toggle current dropdown
+      const span = button.querySelector('span');
+      if (isActive) {
+        content.classList.remove('active');
+        card.classList.remove('expanded');
+        span.style.transform = 'rotate(0deg)';
+      } else {
+        content.classList.add('active');
+        card.classList.add('expanded');
+        span.style.transform = 'rotate(180deg)';
+      }
+    }
+  </script>
 
 
   <!-- CONTACT -->
