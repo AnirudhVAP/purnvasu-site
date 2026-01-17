@@ -354,6 +354,79 @@
   </script>
 
 
+  <!-- OUR PRODUCTS -->
+  <section id="products" class="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 lg:px-10">
+    <div class="max-w-6xl mx-auto">
+      <h3 class="section-title mb-8 sm:mb-10 md:mb-12 text-center">Our Products</h3>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
+        <!-- OrderIn Product -->
+        <button onclick="openProductModal('orderin')" class="group relative overflow-hidden rounded-2xl glow-border transition-all duration-300 hover:scale-105 active:scale-95" style="background-color: #2F7F7A;">
+          <div class="p-2 sm:p-4 md:p-6 flex flex-col items-center justify-center">
+            <img src="./OrderIn-logo.png" alt="OrderIn Logo" class="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 object-contain mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
+            <p class="text-sm sm:text-base md:text-lg text-gray-100 text-center font-semibold">Restaurant Order Management</p>
+          </div>
+        </button>
+
+        <!-- Product 2 - Placeholder -->
+        <div class="group relative overflow-hidden rounded-2xl glow-border transition-all duration-300" style="background-color: #1a1a1a; opacity: 0.6;">
+          <div class="p-2 sm:p-4 md:p-6 flex flex-col items-center justify-center">
+            <div class="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 bg-gray-700 rounded-lg flex items-center justify-center mb-4 sm:mb-6">
+              <span class="text-gray-500 text-2xl">Coming Soon</span>
+            </div>
+            <h4 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-400 text-center">Product 2</h4>
+            <p class="text-xs sm:text-sm text-gray-500 mt-2 text-center">Details coming soon</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT MODAL -->
+  <div id="productModal" class="fixed inset-0 bg-black bg-opacity-75 hidden z-50 overflow-hidden">
+    <div class="w-screen h-screen flex flex-col relative">
+      <!-- Close Button -->
+      <button onclick="closeProductModal()" class="absolute top-4 right-4 z-10 bg-gray-800 hover:bg-gray-700 text-white p-2 rounded-lg transition">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <!-- Modal Content -->
+      <iframe id="productIframe" class="w-full h-full flex-1" frameborder="0" style="margin: 0; padding: 0; border: none;"></iframe>
+    </div>
+  </div>
+
+  <script>
+    function openProductModal(product) {
+      if (product === 'orderin') {
+        // Load orderin-demo-modal.html in iframe (without footer and explore sections)
+        const iframe = document.getElementById('productIframe');
+        iframe.src = './orderin-demo-modal.html';
+        document.getElementById('productModal').classList.remove('hidden');
+      }
+    }
+
+    function closeProductModal() {
+      document.getElementById('productModal').classList.add('hidden');
+      document.getElementById('productIframe').src = '';
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('productModal').addEventListener('click', function(e) {
+      if (e.target === this || e.target.closest('#productModal') === this) {
+        closeProductModal();
+      }
+    });
+
+    // Allow escape key to close modal
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && !document.getElementById('productModal').classList.contains('hidden')) {
+        closeProductModal();
+      }
+    });
+  </script>
+
+
   <!-- CONTACT -->
   <section id="contact" class="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8 lg:px-10">
     <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 items-start">

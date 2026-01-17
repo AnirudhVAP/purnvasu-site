@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OrderIn - PurnVasu Tech Solutions Private Limited</title>
+
+<style>
+/* ===== Light Aqua Palette (#BCDDDC) ===== */
+:root {
+    --bg-main: #FBFCFD;
+    --bg-card: #FFFFFF;
+    --primary: #BCDDDC;
+    --border: #A7CDCC;
+    --hover-bg: #D6EEEE;
+    --text-main: #2E4F4F;
+    --text-muted: #4F6F6F;
+    --accent: #2F7F7A;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-main);
+    font-family: 'Georgia', serif;
+    color: var(--text-main);
+}
+
+a, div, h1, header, section, img {
+    transition: all 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== Header ===== */
+header {
+    background: linear-gradient(135deg, #E6F3F2, var(--primary));
+    padding: 20px;
+    text-align: center;
+    border-bottom: 4px solid var(--border);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.logo {
+    max-width: 180px;
+        filter:
+        drop-shadow(0 10px 20px rgba(0, 0, 0, 0.35))
+        drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
+}
+.logo:hover {
+    transform: translateY(-2px) scale(1.03);
+    filter:
+        drop-shadow(0 12px 24px rgba(0, 0, 0, 0.4))
+        drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3))
+        drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.by-text {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin: 0 0 6px;
+}
+
+.Clogo {
+    max-height: 50px;
+    background-color: #497c7c;
+    padding: 8px 20px;
+    border-radius: 16px;
+    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.1));
+    
+}
+
+.Clogo2 {
+    max-height: 50px;
+    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.1));
+}
+
+/* ===== Sections ===== */
+section {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 40px;
+    background: var(--bg-card);
+    border-radius: 16px;
+    border: 2px solid var(--border);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+}
+
+section:hover {
+    box-shadow: 0 14px 38px rgba(0,0,0,0.12);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo2 {
+    max-width: 120px;
+}
+
+/* ===== Services ===== */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    padding: 25px;
+    border-radius: 14px;
+    background: #FBFEFE;
+    border: 1px solid var(--border);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    font-weight: 600;
+}
+
+.service-card:hover {
+    transform: translateY(-10px) scale(1.04);
+    background: linear-gradient(135deg, #FFFFFF, var(--hover-bg));
+    box-shadow: 0 16px 36px rgba(0,0,0,0.14);
+}
+
+.service-card.with-image {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.service-img {
+    width: 120px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #fff;
+    padding: 4px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.service-content {
+    text-align: left;
+}
+
+/* ===== Contact Colors ===== */
+.contact-label {
+    color: var(--text-main);
+    font-weight: 700;
+}
+
+.contact-link {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.contact-link:hover {
+    color: #a78b3d;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeInMove {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animated-section {
+    opacity: 0;
+    animation: fadeInMove 0.9s ease-out forwards;
+}
+
+.animated-section-delay-1 { animation-delay: 0.1s; }
+.animated-section-delay-2 { animation-delay: 0.3s; }
+.animated-section-delay-3 { animation-delay: 0.5s; }
+
+/* ===== Footer ===== */
+footer {
+    background: #EAF6F5;
+    color: var(--text-muted);
+    text-align: center;
+    padding: 20px;
+    border-top: 3px solid var(--border);
+}
+
+/* ========= MOBILE RESPONSIVE (ONLY ADDITION) ========= */
+@media (max-width: 640px) {
+
+    section {
+        margin: 30px 14px;
+        padding: 24px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card.with-image {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .service-img {
+        /* width: 100%; */
+        max-width: 220px;
+    }
+
+    .service-content {
+        text-align: center;
+    }
+
+    .section-header {
+        /* flex-direction: column; */
+        align-items: flex-start;
+    }
+
+    .logo {
+        max-width: 150px;
+    }
+
+    .Clogo {
+        max-height: 44px;
+    }
+
+    .logo2 {
+    max-width: 90px;
+    }
+}
+@media (max-width: 345px) {
+    .Clogo {
+        max-height: 50px;
+        background-color: #497c7c;
+        padding: 8px 10px;
+        border-radius: 16px;
+        filter: drop-shadow(0 3px 6px rgba(0,0,0,0.1));
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <img src="OrderIn-logo.png" alt="OrderIn Logo" class="logo">
+    <p class="by-text">By</p>
+    <img src="company-logo.png" alt="Company Logo" class="Clogo">
+</header>
+
+<main>
+
+<section class="animated-section animated-section-delay-1">
+    <div class="section-header">
+        <h2>About</h2>
+        <img src="OrderIn-logo.png" class="logo2">
+    </div>
+    <p>
+        OrderIn is a comprehensive ordering support and CRM platform designed to streamline
+        business operations.
+    </p>
+</section>
+
+<section class="animated-section animated-section-delay-2">
+<h2>Our Services</h2>
+
+<div class="services-grid">
+
+<div class="service-card with-image">
+    <img src="bill-generation.jpeg" class="service-img">
+    <div class="service-content">
+        <h3>Bill Generation</h3>
+        <p>Automated bill creation for seamless transactions.</p>
+    </div>
+</div>
+
+<div class="service-card with-image">
+    <img src="work-finance.jpeg" class="service-img">
+    <div class="service-content">
+        <h3>Work Finance Handling</h3>
+        <p>Efficient tracking and management of finances.</p>
+    </div>
+</div>
+
+<div class="service-card with-image">
+    <img src="inventory-support.jpeg" class="service-img">
+    <div class="service-content">
+        <h3>Inventory Support</h3>
+        <p>Advanced inventory tracking with real-time updates.</p>
+    </div>
+</div>
+
+<div class="service-card with-image">
+    <img src="inventory-flash.jpeg" class="service-img">
+    <div class="service-content">
+        <h3>Links Inventory Flash Checking</h3>
+        <p>Quick and accurate inventory flash checks.</p>
+    </div>
+</div>
+
+<div class="service-card with-image">
+    <img src="order-receiving.jpeg" class="service-img">
+    <div class="service-content">
+        <h3>Order Receiving</h3>
+        <p>Track and manage all incoming orders effortlessly.</p>
+    </div>
+</div>
+
+<div class="service-card with-image">
+    <img src="dynamic-menu.jpeg" class="service-img">
+    <div class="service-content">
+        <h3>Dynamic Menu Controlling</h3>
+        <p>Instant menu item updates based on business needs.</p>
+    </div>
+</div>
+
+<div class="service-card with-image">
+    <img src="advertising.jpeg" class="service-img">
+    <div class="service-content">
+        <h3>Advertising</h3>
+        <p>Built-in tools to publish and manage advertisements.</p>
+    </div>
+</div>
+
+<div class="service-card with-image">
+    <img src="feedback.jpeg" class="service-img">
+    <div class="service-content">
+        <h3>Feedback Receiving</h3>
+        <p>Collect and analyze customer feedback.</p>
+    </div>
+</div>
+
+</div>
+</section>
+
+<section class="animated-section animated-section-delay-3">
+<h2>Contact Us</h2>
+
+<p>
+    <span class="contact-label">Email:</span>
+    <a href="mailto:purnvasu.vap@gmail.com" class="contact-link">
+        purnvasu.vap@gmail.com
+    </a>
+</p>
+
+<p>
+    <span class="contact-label">Phone:</span>
+    <a href="tel:+918639987869" class="contact-link">
+        +91 8639987869
+    </a>
+</p>
+</section>
+
+<section class="animated-section animated-section-delay-3">
+<h2>Explore More</h2>
+<a href="https://purnvasu.in/">
+    <img src="company-logo.png" class="Clogo2">
+</a>
+</section>
+
+</main>
+
+<footer>
+<p>&copy; 2025 PurnVasu Tech Solutions Private Limited. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
