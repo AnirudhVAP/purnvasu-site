@@ -417,10 +417,13 @@ document.querySelectorAll('.mag').forEach(el=>{el.addEventListener('mousemove',e
 document.querySelectorAll('.card').forEach(c=>{c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect();const px=(e.clientX-r.left)/r.width,py=(e.clientY-r.top)/r.height;c.style.setProperty('--mx',px*100+'%');c.style.setProperty('--my',py*100+'%');c.style.transform=`perspective(800px) rotateY(${(px-.5)*7}deg) rotateX(${(.5-py)*7}deg) translateY(-4px)`});c.addEventListener('mouseleave',()=>c.style.transform='')});
 
 /* ---- intro then route ---- */
-window.addEventListener('load',()=>{const intro=document.getElementById('intro');
-  const start=()=>route();
-  if(RM||!window.gsap||(location.hash && location.hash!=='#home')){intro.style.display='none';start();return;}
-  gsap.timeline({onComplete:start})
+const intro=document.getElementById('intro');
+let introDone=false;
+function revealSite(){if(introDone)return;introDone=true;intro.style.display='none';route();}
+setTimeout(revealSite,5000);
+window.addEventListener('load',()=>{
+  if(RM||!window.gsap||(location.hash && location.hash!=='#home')){revealSite();return;}
+  gsap.timeline({onComplete:revealSite})
     .to('#intro .word',{opacity:1,letterSpacing:'.22em',duration:1.1,ease:'power2.out'})
     .to('#intro .ln',{opacity:1,duration:.6},'-=.5')
     .to('#intro',{opacity:0,duration:.7,delay:.45,ease:'power2.inOut',onComplete(){intro.style.display='none'}})
